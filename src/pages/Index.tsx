@@ -17,6 +17,7 @@ const Index = () => {
     equipment: '',
     message: ''
   });
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,14 +59,18 @@ const Index = () => {
   ];
 
   const equipment = [
-    { name: 'Экскаваторы', icon: 'Construction' },
-    { name: 'Бульдозеры', icon: 'Truck' },
-    { name: 'Комбайны', icon: 'Wheat' },
-    { name: 'Тракторы', icon: 'Tractor' },
-    { name: 'Погрузчики', icon: 'Container' },
-    { name: 'Самосвалы', icon: 'TruckIcon' },
-    { name: 'Буровые установки', icon: 'Drill' }
+    { name: 'Экскаваторы', icon: 'Construction', category: 'mining' },
+    { name: 'Бульдозеры', icon: 'Truck', category: 'mining' },
+    { name: 'Комбайны', icon: 'Wheat', category: 'agriculture' },
+    { name: 'Тракторы', icon: 'Tractor', category: 'agriculture' },
+    { name: 'Погрузчики', icon: 'Container', category: 'mining' },
+    { name: 'Самосвалы', icon: 'TruckIcon', category: 'mining' },
+    { name: 'Буровые установки', icon: 'Drill', category: 'mining' }
   ];
+
+  const filteredEquipment = selectedCategory === 'all' 
+    ? equipment 
+    : equipment.filter(item => item.category === selectedCategory);
 
   const portfolio = [
     {
@@ -268,8 +273,33 @@ const Index = () => {
               Работаем со всеми видами горнодобывающей и сельскохозяйственной техники
             </p>
           </div>
+          <div className="flex justify-center gap-3 mb-8 flex-wrap">
+            <Button 
+              variant={selectedCategory === 'all' ? 'default' : 'outline'}
+              onClick={() => setSelectedCategory('all')}
+              className="transition-all duration-300"
+            >
+              Все категории
+            </Button>
+            <Button 
+              variant={selectedCategory === 'mining' ? 'default' : 'outline'}
+              onClick={() => setSelectedCategory('mining')}
+              className="transition-all duration-300"
+            >
+              <Icon name="Mountain" size={18} className="mr-2" />
+              Горнодобывающая
+            </Button>
+            <Button 
+              variant={selectedCategory === 'agriculture' ? 'default' : 'outline'}
+              onClick={() => setSelectedCategory('agriculture')}
+              className="transition-all duration-300"
+            >
+              <Icon name="Wheat" size={18} className="mr-2" />
+              Сельскохозяйственная
+            </Button>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {equipment.map((item, index) => (
+            {filteredEquipment.map((item, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
                 <Icon name={item.icon} size={40} className="mx-auto mb-3 text-accent" />
                 <p className="font-heading font-semibold">{item.name}</p>
