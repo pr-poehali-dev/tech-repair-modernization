@@ -107,8 +107,8 @@ const Index = () => {
       {/* Header */}
       <header className="bg-primary text-primary-foreground sticky top-0 z-50 border-b border-border/50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <img src="https://cdn.poehali.dev/files/cac298cc8ca0eb64900e026f2189791c.jpg" alt="ООО МЕРА" className="w-12 h-12 object-contain" />
+          <div className="flex items-center space-x-3 cursor-pointer group">
+            <img src="https://cdn.poehali.dev/files/cac298cc8ca0eb64900e026f2189791c.jpg" alt="ООО МЕРА" className="w-12 h-12 object-contain transition-transform duration-500 group-hover:rotate-180" />
             <span className="text-2xl font-heading font-bold">ООО "МЕРА"</span>
           </div>
           <div className="hidden md:flex space-x-6">
@@ -431,8 +431,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img src="https://cdn.poehali.dev/files/cac298cc8ca0eb64900e026f2189791c.jpg" alt="ООО МЕРА" className="w-10 h-10 object-contain" />
+              <div className="flex items-center space-x-2 mb-4 cursor-pointer group">
+                <img src="https://cdn.poehali.dev/files/cac298cc8ca0eb64900e026f2189791c.jpg" alt="ООО МЕРА" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:rotate-180" />
                 <span className="text-xl font-heading font-bold">ООО "МЕРА"</span>
               </div>
               <p className="text-primary-foreground/80 text-sm">
