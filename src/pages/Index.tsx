@@ -76,7 +76,8 @@ const Index = () => {
     {
       title: 'Восстановление карьерного экскаватора',
       description: 'Капитальный ремонт гидравлической системы и замена основных узлов',
-      stats: '45 дней работы'
+      stats: '45 дней работы',
+      image: 'https://cdn.poehali.dev/files/o9yijrv6hfooxsvhj85isklqzrlsrfla.png'
     },
     {
       title: 'Модернизация комбайна',
@@ -321,8 +322,12 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {portfolio.map((project, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="h-48 bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
-                  <Icon name="Image" size={64} className="text-primary-foreground/20" />
+                <div className="h-48 bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center overflow-hidden">
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <Icon name="Image" size={64} className="text-primary-foreground/20" />
+                  )}
                 </div>
                 <CardHeader>
                   <CardTitle className="font-heading">{project.title}</CardTitle>
