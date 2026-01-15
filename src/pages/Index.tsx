@@ -59,13 +59,13 @@ const Index = () => {
   ];
 
   const equipment = [
-    { name: 'Экскаваторы', icon: 'Construction', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/d8da23fb-d637-4f65-9f0d-3a363b267004.jpg' },
-    { name: 'Бульдозеры', icon: 'Truck', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/39e71327-8a53-473b-a1d2-ac87cb68ef62.jpg' },
-    { name: 'Комбайны', icon: 'Wheat', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/85e610b6-b617-4657-809a-714a9a6a2767.jpg' },
-    { name: 'Тракторы', icon: 'Tractor', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/fdb64c01-a463-4d48-99ea-12a459cb5923.jpg' },
-    { name: 'Погрузчики', icon: 'Container', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/0408d0ce-be5d-4309-ad53-1583853af94c.jpg' },
-    { name: 'Самосвалы', icon: 'TruckIcon', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/a3211603-3a0d-429d-9a13-6566a85fb551.jpg' },
-    { name: 'Буровые установки', icon: 'Drill', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/1dd04b3f-81a1-4a1a-99e4-7ea932a3ef1a.jpg' }
+    { name: 'Экскаваторы', icon: 'Construction', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/d8da23fb-d637-4f65-9f0d-3a363b267004.jpg', description: 'Гидравлические экскаваторы для карьеров и строительства' },
+    { name: 'Бульдозеры', icon: 'Truck', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/39e71327-8a53-473b-a1d2-ac87cb68ef62.jpg', description: 'Тяжелая техника для планировки и перемещения грунта' },
+    { name: 'Комбайны', icon: 'Wheat', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/85e610b6-b617-4657-809a-714a9a6a2767.jpg', description: 'Зерноуборочные комбайны для сельского хозяйства' },
+    { name: 'Тракторы', icon: 'Tractor', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/fdb64c01-a463-4d48-99ea-12a459cb5923.jpg', description: 'Сельскохозяйственные тракторы любой мощности' },
+    { name: 'Погрузчики', icon: 'Container', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/0408d0ce-be5d-4309-ad53-1583853af94c.jpg', description: 'Фронтальные погрузчики для складских работ' },
+    { name: 'Самосвалы', icon: 'TruckIcon', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/a3211603-3a0d-429d-9a13-6566a85fb551.jpg', description: 'Карьерные самосвалы для перевозки горной породы' },
+    { name: 'Буровые установки', icon: 'Drill', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/1dd04b3f-81a1-4a1a-99e4-7ea932a3ef1a.jpg', description: 'Буровое оборудование для горных работ' }
   ];
 
   const filteredEquipment = selectedCategory === 'all' 
@@ -301,11 +301,12 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {filteredEquipment.map((item, index) => (
-              <Card key={index} className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-slide-up overflow-hidden" style={{ animationDelay: `${index * 0.05}s` }}>
+              <Card key={index} className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-slide-up overflow-hidden group relative" style={{ animationDelay: `${index * 0.05}s` }}>
                 <div className="w-full h-32 mb-3 flex items-center justify-center">
-                  <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                  <img src={item.image} alt={item.name} className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <p className="font-heading font-semibold text-sm">{item.name}</p>
+                <p className="font-heading font-semibold text-sm mb-2">{item.name}</p>
+                <p className="text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.description}</p>
               </Card>
             ))}
           </div>
