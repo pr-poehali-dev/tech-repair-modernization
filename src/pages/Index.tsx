@@ -59,13 +59,13 @@ const Index = () => {
   ];
 
   const equipment = [
-    { name: 'Экскаваторы', icon: 'Construction', category: 'mining' },
-    { name: 'Бульдозеры', icon: 'Truck', category: 'mining' },
-    { name: 'Комбайны', icon: 'Wheat', category: 'agriculture' },
-    { name: 'Тракторы', icon: 'Tractor', category: 'agriculture' },
-    { name: 'Погрузчики', icon: 'Container', category: 'mining' },
-    { name: 'Самосвалы', icon: 'TruckIcon', category: 'mining' },
-    { name: 'Буровые установки', icon: 'Drill', category: 'mining' }
+    { name: 'Экскаваторы', icon: 'Construction', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/d8da23fb-d637-4f65-9f0d-3a363b267004.jpg' },
+    { name: 'Бульдозеры', icon: 'Truck', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/39e71327-8a53-473b-a1d2-ac87cb68ef62.jpg' },
+    { name: 'Комбайны', icon: 'Wheat', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/85e610b6-b617-4657-809a-714a9a6a2767.jpg' },
+    { name: 'Тракторы', icon: 'Tractor', category: 'agriculture', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/fdb64c01-a463-4d48-99ea-12a459cb5923.jpg' },
+    { name: 'Погрузчики', icon: 'Container', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/0408d0ce-be5d-4309-ad53-1583853af94c.jpg' },
+    { name: 'Самосвалы', icon: 'TruckIcon', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/a3211603-3a0d-429d-9a13-6566a85fb551.jpg' },
+    { name: 'Буровые установки', icon: 'Drill', category: 'mining', image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/1dd04b3f-81a1-4a1a-99e4-7ea932a3ef1a.jpg' }
   ];
 
   const filteredEquipment = selectedCategory === 'all' 
@@ -301,9 +301,11 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {filteredEquipment.map((item, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
-                <Icon name={item.icon} size={40} className="mx-auto mb-3 text-accent" />
-                <p className="font-heading font-semibold">{item.name}</p>
+              <Card key={index} className="text-center p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-slide-up overflow-hidden" style={{ animationDelay: `${index * 0.05}s` }}>
+                <div className="w-full h-32 mb-3 flex items-center justify-center">
+                  <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                </div>
+                <p className="font-heading font-semibold text-sm">{item.name}</p>
               </Card>
             ))}
           </div>
