@@ -63,7 +63,8 @@ const Index = () => {
     { name: 'Комбайны', icon: 'Wheat' },
     { name: 'Тракторы', icon: 'Tractor' },
     { name: 'Погрузчики', icon: 'Container' },
-    { name: 'Самосвалы', icon: 'TruckIcon' }
+    { name: 'Самосвалы', icon: 'TruckIcon' },
+    { name: 'Буровые установки', icon: 'Drill' }
   ];
 
   const portfolio = [
