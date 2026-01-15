@@ -107,9 +107,9 @@ const Index = () => {
       {/* Header */}
       <header className="bg-primary text-primary-foreground sticky top-0 z-50 border-b border-border/50">
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Icon name="Wrench" size={32} className="text-accent" />
-            <span className="text-2xl font-heading font-bold">ТЕХСЕРВИС</span>
+          <div className="flex items-center space-x-3">
+            <img src="https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/4534a0dd-d21f-498a-8ba8-806d3dde6cf8.jpg" alt="ООО МЕРА" className="w-10 h-10 rounded" />
+            <span className="text-2xl font-heading font-bold">ООО "МЕРА"</span>
           </div>
           <div className="hidden md:flex space-x-6">
             <a href="#services" className="hover:text-accent transition-colors">Услуги</a>
@@ -432,8 +432,8 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Wrench" size={28} className="text-accent" />
-                <span className="text-xl font-heading font-bold">ТЕХСЕРВИС</span>
+                <img src="https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/4534a0dd-d21f-498a-8ba8-806d3dde6cf8.jpg" alt="ООО МЕРА" className="w-8 h-8 rounded" />
+                <span className="text-xl font-heading font-bold">ООО "МЕРА"</span>
               </div>
               <p className="text-primary-foreground/80 text-sm">
                 Профессиональный ремонт и модернизация промышленной техники
@@ -476,7 +476,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-primary-foreground/10 pt-8 text-center text-sm text-primary-foreground/70">
-            <p>&copy; 2026 ТЕХСЕРВИС. Все права защищены.</p>
+            <p>&copy; 2026 ООО "МЕРА". Все права защищены.</p>
           </div>
         </div>
       </footer>
