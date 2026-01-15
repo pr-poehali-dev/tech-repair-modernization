@@ -77,7 +77,7 @@ const Index = () => {
       title: 'Восстановление карьерного экскаватора',
       description: 'Капитальный ремонт гидравлической системы и замена основных узлов',
       stats: '45 дней работы',
-      image: 'https://cdn.poehali.dev/files/o9yijrv6hfooxsvhj85isklqzrlsrfla.png'
+      image: 'https://cdn.poehali.dev/projects/be5de27e-b4a3-4870-a484-00870194878c/files/f61ce8c5-9892-40c8-9a5e-216bed40b786.jpg'
     },
     {
       title: 'Модернизация комбайна',
